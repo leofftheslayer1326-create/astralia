@@ -620,6 +620,7 @@ function renderProducts() {
   });
 
   host.innerHTML = "";
+  host.classList.toggle("single-result", filtered.length === 1);
   if (!filtered.length) {
     const empty = document.createElement("p");
     empty.textContent = t("noProducts");

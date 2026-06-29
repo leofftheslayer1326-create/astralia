@@ -2973,8 +2973,13 @@ code {
   }
 
   .screen[data-screen="catalog"] .catalog-grid {
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 360px));
+    justify-content: center;
     gap: 16px;
+  }
+
+  .screen[data-screen="catalog"] .catalog-grid.single-result {
+    grid-template-columns: minmax(340px, 360px);
   }
 
   .screen[data-screen="catalog"] .product-card {
