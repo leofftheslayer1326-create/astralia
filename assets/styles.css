@@ -656,13 +656,14 @@ p {
 }
 
 .moon {
+  position: relative;
   width: 184px;
   height: 184px;
   border-radius: 50%;
   border: 1px solid rgba(216, 188, 132, 0.42);
   background:
-    radial-gradient(circle at 50% 50%, rgba(241, 226, 184, 0.36) 0 3px, transparent 4px),
-    radial-gradient(circle at 50% 50%, rgba(216, 188, 132, 0.18), transparent 34%),
+    radial-gradient(circle at 50% 50%, rgba(241, 226, 184, 0.32) 0 3px, transparent 4px),
+    radial-gradient(circle at 50% 50%, rgba(216, 188, 132, 0.16), transparent 34%),
     linear-gradient(135deg, rgba(7, 21, 46, 0.18), rgba(11, 16, 32, 0.52));
   box-shadow:
     inset 0 0 0 18px rgba(241, 226, 184, 0.018),
@@ -671,36 +672,68 @@ p {
   animation: moonFloat 6s ease-in-out infinite;
 }
 
-.moon::before,
 .moon::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.moon::before {
-  left: 50%;
-  top: 50%;
-  width: 58px;
-  height: 102px;
-  border: 3px solid var(--gold-soft);
-  border-top-width: 4px;
-  border-bottom-width: 4px;
-  border-radius: 58% 8% 58% 8%;
-  box-shadow:
-    inset 0 0 20px rgba(241, 226, 184, 0.14),
-    0 0 18px rgba(241, 226, 184, 0.30);
-  transform: translate(-50%, -50%) rotate(42deg);
-}
-
 .moon::after {
   left: 50%;
-  top: 8px;
-  bottom: 8px;
+  top: 10px;
+  bottom: 10px;
   width: 1px;
-  background: linear-gradient(transparent, rgba(216, 188, 132, 0.78), transparent);
+  background: linear-gradient(transparent, rgba(216, 188, 132, 0.48), transparent);
   box-shadow: 0 0 16px rgba(216, 188, 132, 0.45);
   transform: translateX(-50%);
+}
+
+.hero-sigil {
+  position: absolute;
+  inset: 18px;
+  z-index: 2;
+  overflow: visible;
+  filter:
+    drop-shadow(0 0 10px rgba(241, 226, 184, 0.34))
+    drop-shadow(0 0 24px rgba(216, 188, 132, 0.18));
+}
+
+.hero-sigil-ring,
+.hero-sigil-orbit,
+.hero-sigil-a {
+  fill: none;
+  stroke: var(--gold-soft);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-sigil-ring {
+  stroke-width: 1.15;
+  opacity: 0.42;
+}
+
+.hero-sigil-orbit {
+  stroke-width: 1.5;
+  opacity: 0.72;
+}
+
+.hero-sigil-orbit.ghost {
+  stroke: var(--blue);
+  opacity: 0.22;
+}
+
+.hero-sigil-a {
+  stroke: var(--gold-soft);
+  stroke-width: 5.2;
+}
+
+.hero-sigil-a.bar {
+  stroke-width: 4.2;
+}
+
+.hero-sigil-star,
+.hero-sigil-dot {
+  fill: var(--gold-soft);
 }
 
 .orbit {
@@ -2568,10 +2601,15 @@ code {
   }
 
   .moon::after {
-    width: 112px;
-    height: 112px;
-    right: -28px;
-    top: -1px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    height: auto;
+    right: auto;
+  }
+
+  .hero-sigil {
+    inset: 12px;
   }
 
   .orbit-one {
