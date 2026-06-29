@@ -13,6 +13,7 @@ const money = new Intl.NumberFormat("ru-RU");
 
 const i18n = {
   ru: {
+    pageTitle: "Astralia - персональная астрология",
     heroBy: "by Angelina Pars",
     heroTitle: "Добро пожаловать в ASTRALIA",
     heroText: "Цифровая астрология нового поколения: персональные разборы, энергия и понятные сценарии",
@@ -115,7 +116,9 @@ const i18n = {
     adminResults: "База результатов",
     adminLegal: "Юридические документы",
     navHome: "Главная",
+    navModules: "Каталог",
     navCatalog: "Каталог",
+    navPartner: "Избранное",
     navFavorites: "Избранное",
     navResults: "Мои результаты",
     navProfile: "Кабинет",
@@ -131,6 +134,7 @@ const i18n = {
     pdfDemo: "В боевой версии здесь будет скачивание PDF.",
   },
   en: {
+    pageTitle: "Astralia - Personal Astrology",
     heroBy: "by Angelina Pars",
     heroTitle: "Welcome to ASTRALIA",
     heroText: "New-generation digital astrology with personal readings, energy insights and clear scenarios",
@@ -233,7 +237,9 @@ const i18n = {
     adminResults: "Result database",
     adminLegal: "Legal documents",
     navHome: "Home",
+    navModules: "Catalog",
     navCatalog: "Catalog",
+    navPartner: "Favorites",
     navFavorites: "Favorites",
     navResults: "My results",
     navProfile: "Cabinet",
@@ -578,13 +584,15 @@ function symbolSvg(symbol = "star") {
 function renderTranslations() {
   document.documentElement.lang = state.lang;
   document.querySelectorAll("[data-i18n]").forEach((element) => {
-    element.textContent = t(element.dataset.i18n);
+    const translated = i18n[state.lang][element.dataset.i18n] || i18n.ru[element.dataset.i18n];
+    if (translated) element.textContent = translated;
   });
   document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
     element.placeholder = t(element.dataset.i18nPlaceholder);
   });
   const langToggle = document.querySelector("[data-lang-toggle]");
   if (langToggle) langToggle.checked = state.lang === "en";
+  document.title = t("pageTitle");
 }
 
 function renderProducts() {
