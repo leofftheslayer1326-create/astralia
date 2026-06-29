@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Astralia by Angelina Pars</title>
+    <meta name="description" content="Astralia demo mobile web app">
+    <link rel="icon" href="assets/astralia-logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="cosmic-effects" aria-hidden="true">
+        <span class="shooting-star shooting-star-one"></span>
+        <span class="shooting-star shooting-star-two"></span>
+        <span class="shooting-star shooting-star-three"></span>
+      </div>
+      <main class="phone-frame" id="app">
+        <header class="topbar" aria-label="Astralia">
+          <button class="icon-button back-button" type="button" aria-label="Back" data-action="back">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button class="brand-mark" type="button" data-route="home" aria-label="Astralia home">
+            <svg class="brand-sigil" viewBox="0 0 64 64" aria-hidden="true">
+              <circle class="sigil-ring" cx="32" cy="32" r="24"></circle>
+              <ellipse class="sigil-orbit" cx="32" cy="32" rx="21" ry="8" transform="rotate(-18 32 32)"></ellipse>
+              <path class="sigil-a" d="M20.5 45 32 18.5 43.5 45"></path>
+              <path class="sigil-a" d="M25.5 35.5h13"></path>
+              <path class="sigil-star" d="M32 12.5 33.3 17l4.2 1.5-4.2 1.5L32 24.5 30.7 20l-4.2-1.5 4.2-1.5L32 12.5Z"></path>
+              <circle class="sigil-dot" cx="32" cy="45" r="1.8"></circle>
+            </svg>
+          </button>
+          <button class="brand-title" type="button" data-route="home">ASTRALIA</button>
+          <div class="lang-switch" aria-label="Language switch">
+            <input class="lang-toggle-checkbox" id="langToggle" type="checkbox" data-lang-toggle aria-label="Switch language">
+            <label class="lang-toggle" for="langToggle">
+              <span class="lang-toggle-track">
+                <span class="lang-toggle-glow"></span>
+                <span class="lang-toggle-label lang-toggle-ru">RU</span>
+                <span class="lang-toggle-label lang-toggle-en">EN</span>
+                <span class="lang-toggle-dots" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+                <span class="lang-toggle-particles" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </span>
+              <span class="lang-toggle-thumb" aria-hidden="true">
+                <span class="lang-toggle-star"></span>
+              </span>
+            </label>
+          </div>
+        </header>
+
+        <section class="screen active" data-screen="home" aria-labelledby="homeTitle">
+          <div class="hero">
+            <p class="eyebrow" data-i18n="heroBy">by Angelina Pars</p>
+            <h1 id="homeTitle" data-i18n="heroTitle">Добро пожаловать в ASTRALIA</h1>
+            <p data-i18n="heroText">Ваш проводник в мире астрологии, энергии и возможностей</p>
+            <div class="moon-visual" aria-hidden="true">
+              <span class="moon"></span>
+              <span class="orbit orbit-one"></span>
+              <span class="orbit orbit-two"></span>
+            </div>
+          </div>
+
+          <div class="value-grid">
+            <article class="mini-card">
+              <span class="inline-astro-icon" data-static-symbol="target" aria-hidden="true"></span>
+              <strong data-i18n="valueOneTitle">Персональные разборы</strong>
+              <p data-i18n="valueOneText">Глубокий анализ вашей энергии и потенциала</p>
+            </article>
+            <article class="mini-card">
+              <span class="inline-astro-icon" data-static-symbol="clock" aria-hidden="true"></span>
+              <strong data-i18n="valueTwoTitle">12 авторских модулей</strong>
+              <p data-i18n="valueTwoText">Уникальные знания для разных сфер жизни</p>
+            </article>
+            <article class="mini-card">
+              <span class="inline-astro-icon" data-static-symbol="payment" aria-hidden="true"></span>
+              <strong data-i18n="valueThreeTitle">Оплата онлайн</strong>
+              <p data-i18n="valueThreeText">Безопасно и удобно из любой точки мира</p>
+            </article>
+          </div>
+
+          <button class="video-tile" type="button" data-route="product" data-product-id="video">
+            <span class="play" aria-hidden="true"></span>
+            <span>
+              <strong data-i18n="videoTitle">Видео приветствие</strong>
+              <small data-i18n="videoText">Узнайте больше о возможностях ASTRALIA за 1 минуту</small>
+            </span>
+          </button>
+
+          <div class="cta-stack">
+            <button class="primary-button" type="button" data-route="catalog" data-i18n="enterApp">Войти</button>
+            <button class="secondary-button" type="button" data-route="catalog" data-i18n="registration">Регистрация</button>
+            <button class="text-button" type="button" data-route="result" data-i18n="demoResult">Посмотреть демо</button>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="catalog" aria-labelledby="catalogTitle">
+          <div class="section-head">
+            <p class="eyebrow" data-i18n="catalogBy">by Angelina Pars</p>
+            <h2 id="catalogTitle" data-i18n="modulesTitle">Модули</h2>
+          </div>
+
+          <div class="search-row">
+            <label class="search-field">
+              <span aria-hidden="true">⌕</span>
+              <input type="search" data-search data-i18n-placeholder="searchPlaceholder" placeholder="Поиск по модулям...">
+            </label>
+            <button class="icon-button" type="button" data-route="admin" aria-label="Admin preview">
+              <span aria-hidden="true">☷</span>
+            </button>
+          </div>
+
+          <div class="chips" role="tablist" aria-label="Categories">
+            <button class="chip active" type="button" data-category="all" data-i18n="catAll">Все</button>
+            <button class="chip" type="button" data-category="love" data-i18n="catLove">Любовь</button>
+            <button class="chip" type="button" data-category="money" data-i18n="catMoney">Деньги</button>
+            <button class="chip" type="button" data-category="body" data-i18n="catBody">Тело</button>
+            <button class="chip" type="button" data-category="tarot" data-i18n="catTarot">Таро</button>
+          </div>
+
+          <div class="catalog-grid" data-products></div>
+        </section>
+
+        <section class="screen" data-screen="product" aria-labelledby="productTitle">
+          <article class="product-hero">
+            <div class="product-symbol" data-product-symbol aria-hidden="true"></div>
+            <div>
+              <p class="eyebrow" data-product-label>module</p>
+              <h2 id="productTitle" data-product-title>Модуль</h2>
+              <p class="price-line" data-product-price>990 ₽</p>
+              <p data-product-description>Описание модуля</p>
+              <button class="primary-button compact" type="button" data-route="checkout" data-i18n="buyModule">Купить модуль</button>
+            </div>
+          </article>
+
+          <article class="content-panel">
+            <h3 data-i18n="whatYouGet">Что вы получите</h3>
+            <ul class="star-list" data-product-benefits></ul>
+          </article>
+
+          <article class="content-panel">
+            <h3 data-i18n="howItWorks">Как это работает</h3>
+            <p data-product-process>Мы сопоставляем ваши данные с заранее подготовленной базой трактовок и собираем персональный результат.</p>
+          </article>
+
+          <article class="content-panel">
+            <h3 data-i18n="whoFits">Для кого подходит</h3>
+            <ul class="star-list" data-product-audience></ul>
+          </article>
+
+          <article class="review-panel">
+            <div class="rating" aria-label="5 stars">★★★★★</div>
+            <p data-i18n="reviewText">Список рекомендаций оказался очень точным. Сразу понятно, куда двигаться дальше.</p>
+            <small data-i18n="reviewAuthor">Мария, 29 лет</small>
+          </article>
+
+          <div class="sticky-buy">
+            <span data-product-price-bottom>990 ₽</span>
+            <button class="primary-button compact" type="button" data-route="checkout" data-i18n="buyModuleBottom">Купить модуль</button>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="checkout" aria-labelledby="checkoutTitle">
+          <h2 id="checkoutTitle" data-i18n="checkoutTitle">Оформление заказа</h2>
+
+          <article class="order-card">
+            <div class="product-symbol small" data-checkout-symbol aria-hidden="true"></div>
+            <div>
+              <h3 data-checkout-title>Модуль</h3>
+              <p data-i18n="instantAccess">Доступ к результату после оплаты</p>
+            </div>
+            <strong data-checkout-price>990 ₽</strong>
+          </article>
+
+          <article class="content-panel">
+            <h3 data-i18n="profileDataTitle">Данные для расчета</h3>
+            <div class="form-grid">
+              <label><span data-i18n="fieldName">Имя</span><input value="Анна"></label>
+              <label><span data-i18n="fieldDate">Дата рождения</span><input value="12.05.1990"></label>
+              <label><span data-i18n="fieldTime">Время рождения</span><input value="14:30"></label>
+              <label><span data-i18n="fieldPlace">Место рождения</span><input value="Москва"></label>
+              <label><span>Email</span><input value="user@example.com"></label>
+            </div>
+          </article>
+
+          <article class="content-panel">
+            <h3 data-i18n="promoTitle">Промокод</h3>
+            <div class="promo-row">
+              <input data-promo-input data-i18n-placeholder="promoPlaceholder" placeholder="Введите промокод">
+              <button class="secondary-button compact" type="button" data-action="applyPromo" data-i18n="applyPromo">Применить</button>
+            </div>
+            <p class="promo-message" data-promo-message></p>
+          </article>
+
+          <article class="total-panel">
+            <span data-i18n="totalToPay">Итого к оплате</span>
+            <strong data-total>990 ₽</strong>
+          </article>
+
+          <article class="pay-method">
+            <div>
+              <span class="radio-dot active" aria-hidden="true"></span>
+              <strong>YooKassa</strong>
+              <small data-i18n="paymentText">Банковские карты и другие способы оплаты</small>
+            </div>
+            <span class="card-art" aria-hidden="true"></span>
+          </article>
+
+          <label class="check-row">
+            <input type="checkbox" checked>
+            <span data-i18n="agreeTerms">Я принимаю оферту и согласие на обработку персональных данных</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox">
+            <span data-i18n="agreeMarketing">Я согласен получать информационные сообщения</span>
+          </label>
+
+          <button class="primary-button" type="button" data-action="pay" data-i18n="payButton">Оплатить</button>
+          <p class="fineprint" data-i18n="paymentFineprint">Безопасная оплата. В демо платеж не выполняется.</p>
+        </section>
+
+        <section class="screen" data-screen="result" aria-labelledby="resultTitle">
+          <div class="section-head center">
+            <h2 id="resultTitle" data-i18n="resultTitle">Ваш результат</h2>
+            <p data-result-meta>Расклад • 29 июня 2026 • 19:40</p>
+          </div>
+
+          <div class="result-visual" aria-hidden="true">
+            <div class="astro-card left-card"><span></span></div>
+            <div class="astro-card main-card"><span></span></div>
+            <div class="astro-card right-card"><span></span></div>
+          </div>
+
+          <article class="content-panel result-panel">
+            <span class="inline-astro-icon" data-static-symbol="star" aria-hidden="true"></span>
+            <div>
+              <h3 data-i18n="mainEnergy">Главная энергия результата</h3>
+              <p data-i18n="mainEnergyText">Вы на пороге обновления и новых возможностей. Результат подсказывает, где сейчас находится ваша сильная сторона.</p>
+            </div>
+          </article>
+
+          <div class="insight-grid">
+            <article class="mini-card">
+              <span class="inline-astro-icon" data-static-symbol="heart" aria-hidden="true"></span>
+              <strong data-i18n="insightLove">Любовь</strong>
+              <p data-i18n="insightLoveText">Больше мягкости, честности и ясных границ.</p>
+            </article>
+            <article class="mini-card">
+              <span class="inline-astro-icon" data-static-symbol="money" aria-hidden="true"></span>
+              <strong data-i18n="insightWork">Работа</strong>
+              <p data-i18n="insightWorkText">Ваши идеи заметят, если оформить их проще.</p>
+            </article>
+            <article class="mini-card">
+              <span class="inline-astro-icon" data-static-symbol="star" aria-hidden="true"></span>
+              <strong data-i18n="insightAdvice">Совет</strong>
+              <p data-i18n="insightAdviceText">Сохраняйте веру в себя и двигайтесь по шагам.</p>
+            </article>
+          </div>
+
+          <div class="dual-actions">
+            <button class="secondary-button" type="button" data-action="saveResult" data-i18n="saveResult">Сохранить</button>
+            <button class="secondary-button" type="button" data-action="downloadPdf" data-i18n="downloadPdf">Скачать PDF</button>
+          </div>
+
+          <button class="wide-panel-button" type="button" data-route="catalog" data-i18n="backToModules">К выбору модулей</button>
+        </section>
+
+        <section class="screen" data-screen="profile" aria-labelledby="profileTitle">
+          <h2 id="profileTitle" data-i18n="profileTitle">Мой кабинет</h2>
+          <article class="profile-card">
+            <div class="avatar-orbit" aria-hidden="true"><span></span></div>
+            <div>
+              <h3 data-i18n="profileName">Имя Пользователя</h3>
+              <p>user@example.com</p>
+              <p>12.05.1990 · 14:30 · Moscow</p>
+            </div>
+            <button class="secondary-button compact" type="button" data-i18n="editProfile">Редактировать</button>
+          </article>
+
+          <div class="dashboard-grid">
+            <article class="stat-card">
+              <span class="inline-astro-icon" data-static-symbol="sun" aria-hidden="true"></span>
+              <strong>2</strong>
+              <p data-i18n="activeAccess">активных доступа</p>
+            </article>
+            <article class="stat-card">
+              <span class="inline-astro-icon" data-static-symbol="cards" aria-hidden="true"></span>
+              <strong>6</strong>
+              <p data-i18n="paidModules">купленных модулей</p>
+            </article>
+          </div>
+
+          <article class="content-panel">
+            <h3 data-i18n="purchaseHistory">История покупок</h3>
+            <div class="history-list" data-history></div>
+          </article>
+        </section>
+
+        <section class="screen" data-screen="partner" aria-labelledby="partnerTitle">
+          <h2 id="partnerTitle" data-i18n="partnerTitle">Партнерство</h2>
+          <p class="lead" data-i18n="partnerLead">Делитесь Astralia и получайте бонусы за приглашения.</p>
+
+          <article class="content-panel">
+            <h3 data-i18n="refLink">Ваша реферальная ссылка</h3>
+            <div class="copy-row">
+              <code>https://astralia.app/ref/astralstar</code>
+              <button class="secondary-button compact" type="button" data-i18n="copy">Копировать</button>
+            </div>
+          </article>
+
+          <div class="dashboard-grid three partner-stats">
+            <article class="stat-card"><span class="inline-astro-icon small" data-static-symbol="globe" aria-hidden="true"></span><strong>1287</strong><p data-i18n="refClicks">переходов</p></article>
+            <article class="stat-card"><span class="inline-astro-icon small" data-static-symbol="sign" aria-hidden="true"></span><strong>312</strong><p data-i18n="refUsers">регистраций</p></article>
+            <article class="stat-card"><span class="inline-astro-icon small" data-static-symbol="money" aria-hidden="true"></span><strong>34 980 ₽</strong><p data-i18n="refBonus">начислено</p></article>
+          </div>
+
+          <article class="content-panel">
+            <h3 data-i18n="howPartnerWorks">Как это работает</h3>
+            <div class="steps">
+              <span>1</span><p data-i18n="partnerStepOne">Делитесь ссылкой или промокодом</p>
+              <span>2</span><p data-i18n="partnerStepTwo">Пользователи регистрируются</p>
+              <span>3</span><p data-i18n="partnerStepThree">Вы получаете бонусы</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="screen" data-screen="admin" aria-labelledby="adminTitle">
+          <h2 id="adminTitle" data-i18n="adminTitle">Админка</h2>
+          <p class="lead" data-i18n="adminLead">Визуальный черновик будущего управления контентом.</p>
+
+          <div class="admin-list">
+            <article><strong data-i18n="adminProducts">Модули и цены</strong><span>12</span></article>
+            <article><strong data-i18n="adminPromos">Промокоды</strong><span>ASTROFREE, STAR15</span></article>
+            <article><strong data-i18n="adminPayments">Платежи YooKassa</strong><span>webhook</span></article>
+            <article><strong data-i18n="adminTexts">Тексты RU/EN</strong><span>i18n</span></article>
+            <article><strong data-i18n="adminResults">База результатов</strong><span>PDF</span></article>
+            <article><strong data-i18n="adminLegal">Юридические документы</strong><span>оферта / ПДн</span></article>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Main navigation">
+          <button class="active" type="button" data-route="home">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 10.8 12 4l8 6.8"></path>
+              <path d="M6.5 10.5V20h11v-9.5"></path>
+              <path d="M10 20v-5h4v5"></path>
+            </svg>
+            <small data-i18n="navHome">Главная</small>
+          </button>
+          <button type="button" data-route="catalog">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="4" width="6" height="6" rx="1.2"></rect>
+              <rect x="14" y="4" width="6" height="6" rx="1.2"></rect>
+              <rect x="4" y="14" width="6" height="6" rx="1.2"></rect>
+              <rect x="14" y="14" width="6" height="6" rx="1.2"></rect>
+            </svg>
+            <small data-i18n="navModules">Модули</small>
+          </button>
+          <button type="button" data-route="partner">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="8"></circle>
+              <path d="M12 7v10"></path>
+              <path d="M7 12h10"></path>
+            </svg>
+            <small data-i18n="navPartner">Партнеры</small>
+          </button>
+          <button type="button" data-route="result">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5" y="4" width="14" height="16" rx="2"></rect>
+              <path d="M8.5 9h7"></path>
+              <path d="M8.5 13h7"></path>
+              <path d="M8.5 17h4.5"></path>
+            </svg>
+            <small data-i18n="navResults">Итоги</small>
+          </button>
+          <button type="button" data-route="profile">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="3.2"></circle>
+              <path d="M5.5 20c.8-3.6 3.1-5.4 6.5-5.4s5.7 1.8 6.5 5.4"></path>
+            </svg>
+            <small data-i18n="navProfile">Профиль</small>
+          </button>
+        </nav>
+      </main>
+    </div>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
