@@ -961,27 +961,11 @@ p {
   text-align: center;
 }
 
-.search-row {
-  display: grid;
-  grid-template-columns: 1fr 44px;
-  gap: 9px;
-}
-
-.search-field,
 .form-grid label,
 .promo-row input {
   border: 1px solid var(--line-cool);
   border-radius: var(--radius);
   background: rgba(7, 12, 22, 0.84);
-}
-
-.search-field {
-  display: grid;
-  grid-template-columns: 34px 1fr;
-  align-items: center;
-  min-height: 46px;
-  padding: 0 12px;
-  color: var(--muted);
 }
 
 input {
@@ -1196,8 +1180,27 @@ input::placeholder {
 }
 
 .product-card-icon .astro-symbol {
-  width: 31px;
-  height: 31px;
+  width: 45px;
+  height: 45px;
+}
+
+.module-sigil .sigil-ring,
+.module-sigil .sigil-orbit {
+  stroke: rgba(255, 228, 168, 0.34);
+  stroke-width: 1.05;
+}
+
+.module-sigil .sigil-north {
+  fill: rgba(255, 228, 168, 0.82);
+  filter: drop-shadow(0 0 4px rgba(255, 228, 168, 0.34));
+}
+
+.module-sigil .sigil-glyph {
+  stroke: var(--gold-soft);
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 .product-card h3 {

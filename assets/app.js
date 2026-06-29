@@ -220,8 +220,6 @@ const products = [
     symbol: "leaf",
     price: 990,
     funnel: true,
-    mediaX: "38%",
-    mediaScale: "1.1",
     ru: {
       title: "Какие продукты мне подходят",
       description: "Персональные рекомендации для здоровья и энергии.",
@@ -262,8 +260,6 @@ const products = [
     category: "body",
     symbol: "bolt",
     price: 10000,
-    mediaX: "36%",
-    mediaScale: "1.1",
     ru: {
       title: "Где моя энергия?",
       description: "Диагностика утечек и восстановление ресурса.",
@@ -285,8 +281,6 @@ const products = [
     symbol: "crystal",
     price: 990,
     funnel: true,
-    mediaX: "38%",
-    mediaScale: "1.1",
     ru: {
       title: "Камни-талисманы",
       description: "Подберите камни силы под вашу энергию.",
@@ -534,7 +528,14 @@ function symbolSvg(symbol = "star") {
     cards: '<rect x="5" y="4" width="9" height="14" rx="1.5" transform="rotate(-8 9.5 11)"></rect><rect x="10" y="6" width="9" height="14" rx="1.5" transform="rotate(8 14.5 13)"></rect><path d="M14.5 10.5 16 13l-1.5 2.5L13 13l1.5-2.5Z"></path>',
     video: '<circle cx="12" cy="12" r="8"></circle><path d="M10 8.5 16 12l-6 3.5v-7Z"></path>',
   };
-  return `<svg class="astro-symbol" viewBox="0 0 24 24" aria-hidden="true">${icons[symbol] || icons.star}</svg>`;
+  return `
+    <svg class="astro-symbol module-sigil" viewBox="0 0 64 64" aria-hidden="true">
+      <circle class="sigil-ring" cx="32" cy="32" r="25"></circle>
+      <ellipse class="sigil-orbit" cx="32" cy="32" rx="25" ry="9" transform="rotate(-18 32 32)"></ellipse>
+      <path class="sigil-north" d="M32 5.5 33.7 12.2 40 14.5 33.7 16.8 32 23.5 30.3 16.8 24 14.5 30.3 12.2 32 5.5Z"></path>
+      <g class="sigil-glyph" transform="translate(8 9) scale(2)">${icons[symbol] || icons.star}</g>
+    </svg>
+  `;
 }
 
 function renderTranslations() {
@@ -736,7 +737,7 @@ document.querySelector("[data-lang-toggle]")?.addEventListener("change", (event)
   renderAll();
 });
 
-document.querySelector("[data-search]").addEventListener("input", (event) => {
+document.querySelector("[data-search]")?.addEventListener("input", (event) => {
   state.query = event.target.value;
   renderProducts();
 });
