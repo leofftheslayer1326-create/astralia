@@ -220,6 +220,8 @@ const products = [
     symbol: "leaf",
     price: 990,
     funnel: true,
+    mediaX: "38%",
+    mediaScale: "1.1",
     ru: {
       title: "Какие продукты мне подходят",
       description: "Персональные рекомендации для здоровья и энергии.",
@@ -260,6 +262,8 @@ const products = [
     category: "body",
     symbol: "bolt",
     price: 10000,
+    mediaX: "36%",
+    mediaScale: "1.1",
     ru: {
       title: "Где моя энергия?",
       description: "Диагностика утечек и восстановление ресурса.",
@@ -281,6 +285,8 @@ const products = [
     symbol: "crystal",
     price: 990,
     funnel: true,
+    mediaX: "38%",
+    mediaScale: "1.1",
     ru: {
       title: "Камни-талисманы",
       description: "Подберите камни силы под вашу энергию.",
@@ -568,6 +574,9 @@ function renderProducts() {
     card.className = "product-card";
     card.dataset.route = "product";
     card.dataset.productId = product.id;
+    card.style.setProperty("--media-x", product.mediaX || "50%");
+    card.style.setProperty("--media-y", product.mediaY || "42%");
+    card.style.setProperty("--media-scale", product.mediaScale || "1.04");
     card.innerHTML = `
       <span class="product-card-media">
         <img src="${productImage(product)}" alt="" loading="lazy">

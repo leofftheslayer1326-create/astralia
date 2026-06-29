@@ -1031,6 +1031,9 @@ input::placeholder {
 
 .product-card {
   position: relative;
+  --media-x: 50%;
+  --media-y: 42%;
+  --media-scale: 1.04;
   min-height: 310px;
   padding: 12px;
   border: 1px solid var(--line);
@@ -1042,6 +1045,17 @@ input::placeholder {
   cursor: pointer;
   overflow: hidden;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.product-card::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0 34%, rgba(255, 228, 168, 0.075) 46%, transparent 58% 100%);
+  opacity: 0;
+  transform: translateX(-38%);
+  pointer-events: none;
 }
 
 .product-card::before {
@@ -1096,15 +1110,26 @@ input::placeholder {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: var(--media-x) var(--media-y);
   opacity: 0.88;
-  transform: scale(1.04);
+  transform: scale(var(--media-scale));
   transition: transform 220ms ease, opacity 220ms ease;
+  animation: moduleImageDrift 10s ease-in-out infinite alternate;
 }
 
 .product-card:hover .product-card-media img {
   opacity: 1;
-  transform: scale(1.085);
+  transform: scale(calc(var(--media-scale) + 0.045));
+  animation-play-state: paused;
+}
+
+.product-card:hover::after {
+  opacity: 1;
+  animation: cardSheen 980ms ease forwards;
+}
+
+.product-card:hover .product-card-icon {
+  animation: iconGlowPulse 1150ms ease-in-out infinite alternate;
 }
 
 .product-card-top {
@@ -2086,6 +2111,37 @@ code {
   }
 }
 
+@keyframes moduleImageDrift {
+  0% {
+    filter: brightness(0.92) saturate(1.02);
+  }
+  100% {
+    filter: brightness(1.04) saturate(1.08);
+  }
+}
+
+@keyframes cardSheen {
+  from {
+    transform: translateX(-42%);
+  }
+  to {
+    transform: translateX(42%);
+  }
+}
+
+@keyframes iconGlowPulse {
+  from {
+    box-shadow:
+      inset 0 0 0 8px rgba(255, 228, 168, 0.025),
+      0 0 24px rgba(233, 191, 103, 0.08);
+  }
+  to {
+    box-shadow:
+      inset 0 0 0 8px rgba(255, 228, 168, 0.045),
+      0 0 34px rgba(233, 191, 103, 0.18);
+  }
+}
+
 @keyframes langParticle {
   0%,
   100% {
@@ -2095,6 +2151,16 @@ code {
   45% {
     opacity: 0.72;
     transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
 
