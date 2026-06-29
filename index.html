@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles.css?v=20260629-2">
+    <link rel="stylesheet" href="assets/styles.css?v=20260630-1">
   </head>
   <body>
     <div class="page-shell">
@@ -88,40 +88,43 @@
           <div class="value-grid">
             <article class="mini-card">
               <span class="inline-astro-icon" data-static-symbol="target" aria-hidden="true"></span>
-              <strong data-i18n="valueOneTitle">Персональные разборы</strong>
-              <p data-i18n="valueOneText">Глубокий анализ вашей энергии и потенциала</p>
+              <strong data-i18n="valueOneTitle">Личный разбор</strong>
+              <p data-i18n="valueOneText">Точные рекомендации по вашей дате рождения, энергии и текущему запросу.</p>
             </article>
             <article class="mini-card">
               <span class="inline-astro-icon" data-static-symbol="clock" aria-hidden="true"></span>
-              <strong data-i18n="valueTwoTitle">12 авторских модулей</strong>
-              <p data-i18n="valueTwoText">Уникальные знания для разных сфер жизни</p>
+              <strong data-i18n="valueTwoTitle">12 направлений</strong>
+              <p data-i18n="valueTwoText">Тело, отношения, деньги, переезд, прогнозы и символические подсказки.</p>
             </article>
             <article class="mini-card">
               <span class="inline-astro-icon" data-static-symbol="payment" aria-hidden="true"></span>
-              <strong data-i18n="valueThreeTitle">Оплата онлайн</strong>
-              <p data-i18n="valueThreeText">Безопасно и удобно из любой точки мира</p>
+              <strong data-i18n="valueThreeTitle">Готовый результат</strong>
+              <p data-i18n="valueThreeText">После оформления разбор сохраняется в кабинете и доступен для скачивания.</p>
             </article>
           </div>
 
-          <button class="video-tile" type="button" data-route="product" data-product-id="video">
-            <span class="play" aria-hidden="true"></span>
-            <span>
-              <strong data-i18n="videoTitle">Видео приветствие</strong>
-              <small data-i18n="videoText">Узнайте больше о возможностях ASTRALIA за 1 минуту</small>
-            </span>
-          </button>
+          <div class="home-actions">
+            <button class="video-tile" type="button" data-route="product" data-product-id="video">
+              <span class="play" aria-hidden="true"></span>
+              <span>
+              <strong data-i18n="videoTitle">Знакомство с Astralia</strong>
+              <small data-i18n="videoText">Короткое видео о подходе, форматах разборов и возможностях сервиса.</small>
+              </span>
+            </button>
 
-          <div class="cta-stack">
-            <button class="primary-button" type="button" data-route="catalog" data-i18n="enterApp">Войти</button>
-            <button class="secondary-button" type="button" data-route="catalog" data-i18n="registration">Регистрация</button>
-            <button class="text-button" type="button" data-route="result" data-i18n="demoResult">Посмотреть демо</button>
+            <div class="cta-stack">
+              <button class="primary-button" type="button" data-route="catalog" data-i18n="enterApp">Войти</button>
+              <button class="secondary-button" type="button" data-route="catalog" data-i18n="registration">Регистрация</button>
+              <button class="text-button" type="button" data-route="result" data-i18n="demoResult">Посмотреть пример</button>
+            </div>
           </div>
         </section>
 
         <section class="screen" data-screen="catalog" aria-labelledby="catalogTitle">
-          <div class="section-head">
+          <div class="section-head center catalog-head">
             <p class="eyebrow" data-i18n="catalogBy">by Angelina Pars</p>
-            <h2 id="catalogTitle" data-i18n="modulesTitle">Модули</h2>
+            <h2 id="catalogTitle" data-i18n="modulesTitle">Каталог</h2>
+            <p data-i18n="catalogLead">Выберите разбор под текущий запрос: здоровье, отношения, деньги, переезд или личный прогноз.</p>
           </div>
 
           <div class="chips" role="tablist" aria-label="Categories">
@@ -139,13 +142,31 @@
           <div class="section-head center">
             <p class="eyebrow" data-i18n="catalogBy">by Angelina Pars</p>
             <h2 id="favoritesTitle" data-i18n="favoriteTitle">Избранное</h2>
-            <p data-i18n="favoritesLead">Модули, к которым пользователь должен захотеть вернуться.</p>
+            <p data-i18n="favoritesLead">Личная подборка разборов, к которым удобно вернуться перед покупкой.</p>
           </div>
 
           <div class="favorites-orbit" aria-hidden="true">
             <span class="orbit orbit-one"></span>
             <span class="orbit orbit-two"></span>
             <span class="inline-astro-icon" data-static-symbol="heart"></span>
+          </div>
+
+          <div class="favorites-summary">
+            <article class="mini-card">
+              <span class="inline-astro-icon" data-static-symbol="target" aria-hidden="true"></span>
+              <strong data-i18n="favoritesPrimaryTitle">Подборка собрана по интересу</strong>
+              <p data-i18n="favoritesPrimaryText">Соберите рядом направления, которые сейчас откликаются: здоровье, отношения, деньги или личный прогноз.</p>
+            </article>
+            <article class="mini-card">
+              <span class="inline-astro-icon" data-static-symbol="clock" aria-hidden="true"></span>
+              <strong data-i18n="favoritesSecondTitle">Следующий шаг без поиска</strong>
+              <p data-i18n="favoritesSecondText">Избранное помогает быстро вернуться к нужному разбору, сравнить цену и открыть оформление.</p>
+            </article>
+            <article class="mini-card">
+              <span class="inline-astro-icon" data-static-symbol="payment" aria-hidden="true"></span>
+              <strong data-i18n="favoritesThirdTitle">Мягкая воронка покупки</strong>
+              <p data-i18n="favoritesThirdText">Сравните несколько вариантов и выберите тот, который лучше всего подходит вашему запросу.</p>
+            </article>
           </div>
 
           <div class="favorites-grid" data-favorites></div>
@@ -165,7 +186,7 @@
               <img data-product-image src="assets/module-images/products.jpg" alt="">
               <span class="product-symbol" data-product-symbol aria-hidden="true"></span>
             </figure>
-            <div>
+            <div class="product-summary">
               <p class="eyebrow" data-product-label>module</p>
               <h2 id="productTitle" data-product-title>Модуль</h2>
               <p class="price-line" data-product-price>990 ₽</p>
@@ -195,69 +216,71 @@
             <small data-i18n="reviewAuthor">Мария, 29 лет</small>
           </article>
 
-          <div class="sticky-buy">
-            <span data-product-price-bottom>990 ₽</span>
-            <button class="primary-button compact" type="button" data-route="checkout" data-i18n="buyModuleBottom">Купить модуль</button>
-          </div>
         </section>
 
         <section class="screen" data-screen="checkout" aria-labelledby="checkoutTitle">
           <h2 id="checkoutTitle" data-i18n="checkoutTitle">Оформление заказа</h2>
 
-          <article class="order-card">
-            <div class="product-symbol small" data-checkout-symbol aria-hidden="true"></div>
-            <div>
-              <h3 data-checkout-title>Модуль</h3>
-              <p data-i18n="instantAccess">Доступ к результату после оплаты</p>
+          <div class="checkout-layout">
+            <div class="checkout-main-column">
+              <article class="order-card">
+                <div class="product-symbol small" data-checkout-symbol aria-hidden="true"></div>
+                <div>
+                  <h3 data-checkout-title>Модуль</h3>
+                  <p data-i18n="instantAccess">Доступ к результату после оплаты</p>
+                </div>
+                <strong data-checkout-price>990 ₽</strong>
+              </article>
+
+              <article class="content-panel">
+                <h3 data-i18n="profileDataTitle">Данные для расчета</h3>
+                <div class="form-grid">
+                  <label><span data-i18n="fieldName">Имя</span><input value="Анна"></label>
+                  <label><span data-i18n="fieldDate">Дата рождения</span><input value="12.05.1990"></label>
+                  <label><span data-i18n="fieldTime">Время рождения</span><input value="14:30"></label>
+                  <label><span data-i18n="fieldPlace">Место рождения</span><input value="Москва"></label>
+                  <label><span>Email</span><input value="user@example.com"></label>
+                </div>
+              </article>
+
+              <article class="content-panel">
+                <h3 data-i18n="promoTitle">Промокод</h3>
+                <div class="promo-row">
+                  <input data-promo-input data-i18n-placeholder="promoPlaceholder" placeholder="Введите промокод">
+                  <button class="secondary-button compact" type="button" data-action="applyPromo" data-i18n="applyPromo">Применить</button>
+                </div>
+                <p class="promo-message" data-promo-message></p>
+              </article>
             </div>
-            <strong data-checkout-price>990 ₽</strong>
-          </article>
 
-          <article class="content-panel">
-            <h3 data-i18n="profileDataTitle">Данные для расчета</h3>
-            <div class="form-grid">
-              <label><span data-i18n="fieldName">Имя</span><input value="Анна"></label>
-              <label><span data-i18n="fieldDate">Дата рождения</span><input value="12.05.1990"></label>
-              <label><span data-i18n="fieldTime">Время рождения</span><input value="14:30"></label>
-              <label><span data-i18n="fieldPlace">Место рождения</span><input value="Москва"></label>
-              <label><span>Email</span><input value="user@example.com"></label>
-            </div>
-          </article>
+            <aside class="checkout-side-column" aria-label="Итог заказа">
+              <article class="total-panel">
+                <span data-i18n="totalToPay">Итого к оплате</span>
+                <strong data-total>990 ₽</strong>
+              </article>
 
-          <article class="content-panel">
-            <h3 data-i18n="promoTitle">Промокод</h3>
-            <div class="promo-row">
-              <input data-promo-input data-i18n-placeholder="promoPlaceholder" placeholder="Введите промокод">
-              <button class="secondary-button compact" type="button" data-action="applyPromo" data-i18n="applyPromo">Применить</button>
-            </div>
-            <p class="promo-message" data-promo-message></p>
-          </article>
+              <article class="pay-method">
+                <div>
+                  <span class="radio-dot active" aria-hidden="true"></span>
+                  <strong>YooKassa</strong>
+                  <small data-i18n="paymentText">Банковские карты и другие способы оплаты</small>
+                </div>
+                <span class="card-art" aria-hidden="true"></span>
+              </article>
 
-          <article class="total-panel">
-            <span data-i18n="totalToPay">Итого к оплате</span>
-            <strong data-total>990 ₽</strong>
-          </article>
+              <label class="check-row">
+                <input type="checkbox" checked>
+                <span data-i18n="agreeTerms">Я принимаю оферту и согласие на обработку персональных данных</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox">
+                <span data-i18n="agreeMarketing">Я согласен получать информационные сообщения</span>
+              </label>
 
-          <article class="pay-method">
-            <div>
-              <span class="radio-dot active" aria-hidden="true"></span>
-              <strong>YooKassa</strong>
-              <small data-i18n="paymentText">Банковские карты и другие способы оплаты</small>
-            </div>
-            <span class="card-art" aria-hidden="true"></span>
-          </article>
-
-          <label class="check-row">
-            <input type="checkbox" checked>
-            <span data-i18n="agreeTerms">Я принимаю оферту и согласие на обработку персональных данных</span>
-          </label>
-          <label class="check-row">
-            <input type="checkbox">
-            <span data-i18n="agreeMarketing">Я согласен получать информационные сообщения</span>
-          </label>
-
-          <button class="primary-button" type="button" data-action="pay" data-i18n="payButton">Оплатить</button>
-          <p class="fineprint" data-i18n="paymentFineprint">Безопасная оплата. В демо платеж не выполняется.</p>
+              <button class="primary-button" type="button" data-action="pay" data-i18n="payButton">Оплатить</button>
+              <p class="fineprint" data-i18n="paymentFineprint">Безопасная оплата. В прототипе платеж не выполняется.</p>
+            </aside>
+          </div>
         </section>
 
         <section class="screen" data-screen="result" aria-labelledby="resultTitle">
@@ -266,122 +289,135 @@
             <p data-result-meta data-i18n="resultMeta">3 сохраненных разбора - следующий откроет новый уровень</p>
           </div>
 
-          <div class="result-visual" aria-hidden="true">
-            <div class="astro-card left-card"><span></span></div>
-            <div class="astro-card main-card"><span></span></div>
-            <div class="astro-card right-card"><span></span></div>
-          </div>
+          <div class="result-layout">
+            <div class="result-main-column">
+              <div class="result-visual" aria-hidden="true">
+                <div class="astro-card left-card"><span></span></div>
+                <div class="astro-card main-card"><span></span></div>
+                <div class="astro-card right-card"><span></span></div>
+              </div>
 
-          <article class="content-panel result-panel">
-            <span class="inline-astro-icon" data-static-symbol="star" aria-hidden="true"></span>
-            <div>
-              <h3 data-i18n="mainEnergy">Главная энергия результата</h3>
-              <p data-i18n="mainEnergyText">Вы на пороге обновления и новых возможностей. Результат подсказывает, где сейчас находится ваша сильная сторона.</p>
+              <article class="content-panel result-panel">
+                <span class="inline-astro-icon" data-static-symbol="star" aria-hidden="true"></span>
+                <div>
+                  <h3 data-i18n="mainEnergy">Главная энергия результата</h3>
+                  <p data-i18n="mainEnergyText">Вы на пороге обновления и новых возможностей. Результат подсказывает, где сейчас находится ваша сильная сторона.</p>
+                </div>
+              </article>
+
+              <div class="insight-grid">
+                <article class="mini-card">
+                  <span class="inline-astro-icon" data-static-symbol="heart" aria-hidden="true"></span>
+                  <strong data-i18n="insightLove">Любовь</strong>
+                  <p data-i18n="insightLoveText">Больше мягкости, честности и ясных границ.</p>
+                </article>
+                <article class="mini-card">
+                  <span class="inline-astro-icon" data-static-symbol="money" aria-hidden="true"></span>
+                  <strong data-i18n="insightWork">Работа</strong>
+                  <p data-i18n="insightWorkText">Ваши идеи заметят, если оформить их проще.</p>
+                </article>
+                <article class="mini-card">
+                  <span class="inline-astro-icon" data-static-symbol="star" aria-hidden="true"></span>
+                  <strong data-i18n="insightAdvice">Совет</strong>
+                  <p data-i18n="insightAdviceText">Сохраняйте веру в себя и двигайтесь по шагам.</p>
+                </article>
+              </div>
             </div>
-          </article>
 
-          <article class="content-panel result-vault">
-            <h3 data-i18n="resultsVaultTitle">Сохраненные разборы</h3>
-            <div class="results-list" data-results-list></div>
-          </article>
+            <aside class="result-side-column">
+              <article class="content-panel result-vault">
+                <h3 data-i18n="resultsVaultTitle">Сохраненные разборы</h3>
+                <div class="results-list" data-results-list></div>
+              </article>
 
-          <article class="content-panel mystic-nudge">
-            <span class="inline-astro-icon" data-static-symbol="crystal" aria-hidden="true"></span>
-            <div>
-              <h3 data-i18n="nextResultTitle">Следующий разбор усиливает карту</h3>
-              <p data-i18n="nextResultText">Добавьте еще один модуль, чтобы открыть персональную связку рекомендаций по телу, деньгам и отношениям.</p>
-            </div>
-          </article>
+              <article class="content-panel mystic-nudge">
+                <span class="inline-astro-icon" data-static-symbol="crystal" aria-hidden="true"></span>
+                <div>
+                  <h3 data-i18n="nextResultTitle">Следующий разбор усиливает карту</h3>
+                  <p data-i18n="nextResultText">Добавьте еще один модуль, чтобы открыть персональную связку рекомендаций по телу, деньгам и отношениям.</p>
+                </div>
+              </article>
 
-          <div class="insight-grid">
-            <article class="mini-card">
-              <span class="inline-astro-icon" data-static-symbol="heart" aria-hidden="true"></span>
-              <strong data-i18n="insightLove">Любовь</strong>
-              <p data-i18n="insightLoveText">Больше мягкости, честности и ясных границ.</p>
-            </article>
-            <article class="mini-card">
-              <span class="inline-astro-icon" data-static-symbol="money" aria-hidden="true"></span>
-              <strong data-i18n="insightWork">Работа</strong>
-              <p data-i18n="insightWorkText">Ваши идеи заметят, если оформить их проще.</p>
-            </article>
-            <article class="mini-card">
-              <span class="inline-astro-icon" data-static-symbol="star" aria-hidden="true"></span>
-              <strong data-i18n="insightAdvice">Совет</strong>
-              <p data-i18n="insightAdviceText">Сохраняйте веру в себя и двигайтесь по шагам.</p>
-            </article>
+              <div class="dual-actions">
+                <button class="secondary-button" type="button" data-action="saveResult" data-i18n="saveResult">Сохранить</button>
+                <button class="secondary-button" type="button" data-action="downloadPdf" data-i18n="downloadPdf">Скачать PDF</button>
+              </div>
+
+              <button class="wide-panel-button" type="button" data-route="catalog" data-i18n="backToModules">К каталогу</button>
+            </aside>
           </div>
-
-          <div class="dual-actions">
-            <button class="secondary-button" type="button" data-action="saveResult" data-i18n="saveResult">Сохранить</button>
-            <button class="secondary-button" type="button" data-action="downloadPdf" data-i18n="downloadPdf">Скачать PDF</button>
-          </div>
-
-          <button class="wide-panel-button" type="button" data-route="catalog" data-i18n="backToModules">К выбору модулей</button>
         </section>
 
         <section class="screen" data-screen="profile" aria-labelledby="profileTitle">
-          <h2 id="profileTitle" data-i18n="profileTitle">Мой кабинет</h2>
+          <h2 id="profileTitle" data-i18n="profileTitle">Кабинет</h2>
           <p class="lead" data-i18n="cabinetLead">Личная карта прогресса, покупок и приглашений.</p>
-          <article class="profile-card">
-            <div class="avatar-orbit" aria-hidden="true"><span></span></div>
-            <div>
-              <h3 data-i18n="profileName">Имя Пользователя</h3>
-              <p>user@example.com</p>
-              <p>12.05.1990 · 14:30 · Moscow</p>
-            </div>
-            <button class="secondary-button compact" type="button" data-i18n="editProfile">Редактировать</button>
-          </article>
 
-          <article class="growth-panel">
-            <div class="growth-panel-head">
-              <div>
-                <h3 data-i18n="growthTitle">Звездный прогресс</h3>
-                <p data-i18n="growthSubtitle">Чем больше модулей и приглашений, тем выше личный уровень.</p>
+          <div class="profile-layout">
+            <div class="profile-main-column">
+              <article class="profile-card">
+                <div class="avatar-orbit" aria-hidden="true"><span></span></div>
+                <div>
+                  <h3 data-i18n="profileName">Имя Пользователя</h3>
+                  <p>user@example.com</p>
+                  <p>12.05.1990 · 14:30 · Moscow</p>
+                </div>
+                <button class="secondary-button compact" type="button" data-i18n="editProfile">Редактировать</button>
+              </article>
+
+              <div class="dashboard-grid">
+                <article class="stat-card">
+                  <span class="inline-astro-icon" data-static-symbol="sun" aria-hidden="true"></span>
+                  <strong>2</strong>
+                  <p data-i18n="activeAccess">активных доступа</p>
+                </article>
+                <article class="stat-card">
+                  <span class="inline-astro-icon" data-static-symbol="cards" aria-hidden="true"></span>
+                  <strong>6</strong>
+                  <p data-i18n="paidModules">купленных модулей</p>
+                </article>
               </div>
-              <strong>68%</strong>
-            </div>
-            <div class="growth-chart" aria-hidden="true">
-              <span style="--height: 34%"></span>
-              <span style="--height: 58%"></span>
-              <span style="--height: 46%"></span>
-              <span style="--height: 72%"></span>
-              <span style="--height: 64%"></span>
-              <span style="--height: 88%"></span>
-            </div>
-            <div class="growth-lines">
-              <p><span data-i18n="purchasePath">Покупки</span><strong>6 / 8</strong></p>
-              <p><span data-i18n="referralPath">Приглашения</span><strong>12 / 17</strong></p>
-              <p><span data-i18n="bonusPath">Бонусы</span><strong>34 980 ₽</strong></p>
-            </div>
-            <p class="reward-line" data-i18n="nextReward">До статуса Oracle осталось 2 покупки или 5 приглашений</p>
-          </article>
 
-          <div class="dashboard-grid">
-            <article class="stat-card">
-              <span class="inline-astro-icon" data-static-symbol="sun" aria-hidden="true"></span>
-              <strong>2</strong>
-              <p data-i18n="activeAccess">активных доступа</p>
-            </article>
-            <article class="stat-card">
-              <span class="inline-astro-icon" data-static-symbol="cards" aria-hidden="true"></span>
-              <strong>6</strong>
-              <p data-i18n="paidModules">купленных модулей</p>
-            </article>
+              <article class="content-panel purchase-history-panel">
+                <h3 data-i18n="purchaseHistory">История покупок</h3>
+                <div class="history-list" data-history></div>
+              </article>
+            </div>
+
+            <div class="profile-side-column">
+              <article class="growth-panel">
+                <div class="growth-panel-head">
+                  <div>
+                    <h3 data-i18n="growthTitle">Звездный прогресс</h3>
+                    <p data-i18n="growthSubtitle">Чем больше модулей и приглашений, тем выше личный уровень.</p>
+                  </div>
+                  <strong>68%</strong>
+                </div>
+                <div class="growth-chart" aria-hidden="true">
+                  <span style="--height: 34%"></span>
+                  <span style="--height: 58%"></span>
+                  <span style="--height: 46%"></span>
+                  <span style="--height: 72%"></span>
+                  <span style="--height: 64%"></span>
+                  <span style="--height: 88%"></span>
+                </div>
+                <div class="growth-lines">
+                  <p><span data-i18n="purchasePath">Покупки</span><strong>6 / 8</strong></p>
+                  <p><span data-i18n="referralPath">Приглашения</span><strong>12 / 17</strong></p>
+                  <p><span data-i18n="bonusPath">Бонусы</span><strong>34 980 ₽</strong></p>
+                </div>
+                <p class="reward-line" data-i18n="nextReward">До статуса Oracle осталось 2 покупки или 5 приглашений</p>
+              </article>
+
+              <article class="content-panel referral-boost">
+                <span class="inline-astro-icon" data-static-symbol="globe" aria-hidden="true"></span>
+                <div>
+                  <h3 data-i18n="referralBoostTitle">Реферальная орбита</h3>
+                  <p data-i18n="referralBoostText">Делитесь ссылкой: приглашения двигают шкалу бонусов и открывают скидки на следующие разборы.</p>
+                  <button class="secondary-button compact" type="button" data-route="partner" data-i18n="openPartner">Открыть партнерку</button>
+                </div>
+              </article>
+            </div>
           </div>
-
-          <article class="content-panel referral-boost">
-            <span class="inline-astro-icon" data-static-symbol="globe" aria-hidden="true"></span>
-            <div>
-              <h3 data-i18n="referralBoostTitle">Реферальная орбита</h3>
-              <p data-i18n="referralBoostText">Делитесь ссылкой: приглашения двигают шкалу бонусов и открывают скидки на следующие разборы.</p>
-              <button class="secondary-button compact" type="button" data-route="partner" data-i18n="openPartner">Открыть партнерку</button>
-            </div>
-          </article>
-
-          <article class="content-panel">
-            <h3 data-i18n="purchaseHistory">История покупок</h3>
-            <div class="history-list" data-history></div>
-          </article>
         </section>
 
         <section class="screen" data-screen="partner" aria-labelledby="partnerTitle">
@@ -414,10 +450,10 @@
 
         <section class="screen" data-screen="admin" aria-labelledby="adminTitle">
           <h2 id="adminTitle" data-i18n="adminTitle">Админка</h2>
-          <p class="lead" data-i18n="adminLead">Визуальный черновик будущего управления контентом.</p>
+          <p class="lead" data-i18n="adminLead">Панель управления каталогом, текстами, промокодами и результатами.</p>
 
           <div class="admin-list">
-            <article><strong data-i18n="adminProducts">Модули и цены</strong><span>12</span></article>
+            <article><strong data-i18n="adminProducts">Каталог и цены</strong><span>12</span></article>
             <article><strong data-i18n="adminPromos">Промокоды</strong><span>ASTROFREE, STAR15</span></article>
             <article><strong data-i18n="adminPayments">Платежи YooKassa</strong><span>webhook</span></article>
             <article><strong data-i18n="adminTexts">Тексты RU/EN</strong><span>i18n</span></article>
@@ -470,6 +506,6 @@
       </main>
     </div>
 
-    <script src="assets/app.js?v=20260629-2"></script>
+    <script src="assets/app.js?v=20260630-1"></script>
   </body>
 </html>
