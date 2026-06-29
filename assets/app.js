@@ -505,6 +505,10 @@ function selectedProduct() {
   return allProducts.find((product) => product.id === state.selectedProductId) || products[0];
 }
 
+function productImage(product) {
+  return product.id === "video" ? "assets/astralia-logo.svg" : `assets/module-images/${product.id}.jpg`;
+}
+
 function symbolSvg(symbol = "star") {
   const icons = {
     target: '<circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4.4"></circle><circle cx="12" cy="12" r="1.3"></circle><path d="M12 2.5v3"></path><path d="M12 18.5v3"></path><path d="M2.5 12h3"></path><path d="M18.5 12h3"></path>',
@@ -565,6 +569,9 @@ function renderProducts() {
     card.dataset.route = "product";
     card.dataset.productId = product.id;
     card.innerHTML = `
+      <span class="product-card-media">
+        <img src="${productImage(product)}" alt="" loading="lazy">
+      </span>
       <div class="product-card-top">
         <span class="product-card-icon">${symbolSvg(product.symbol)}</span>
         <span class="badge">${product.funnel ? t("funnel") : t("oneTime")}</span>
@@ -588,6 +595,9 @@ function renderProductDetail() {
   document.querySelector("[data-product-price-bottom]").textContent = formatPrice(product.price);
   document.querySelector("[data-product-description]").textContent = text.description;
   document.querySelector("[data-product-process]").textContent = text.process;
+  const productImageElement = document.querySelector("[data-product-image]");
+  productImageElement.src = productImage(product);
+  productImageElement.alt = text.title;
   document.querySelector("[data-product-symbol]").innerHTML = symbolSvg(product.symbol);
   document.querySelector("[data-checkout-symbol]").innerHTML = symbolSvg(product.symbol);
   document.querySelector("[data-checkout-title]").textContent = text.title;
