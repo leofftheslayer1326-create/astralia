@@ -135,6 +135,30 @@
           <div class="catalog-grid" data-products></div>
         </section>
 
+        <section class="screen" data-screen="favorites" aria-labelledby="favoritesTitle">
+          <div class="section-head center">
+            <p class="eyebrow" data-i18n="catalogBy">by Angelina Pars</p>
+            <h2 id="favoritesTitle" data-i18n="favoriteTitle">Избранное</h2>
+            <p data-i18n="favoritesLead">Модули, к которым пользователь должен захотеть вернуться.</p>
+          </div>
+
+          <div class="favorites-orbit" aria-hidden="true">
+            <span class="orbit orbit-one"></span>
+            <span class="orbit orbit-two"></span>
+            <span class="inline-astro-icon" data-static-symbol="heart"></span>
+          </div>
+
+          <div class="favorites-grid" data-favorites></div>
+
+          <article class="content-panel mystic-nudge">
+            <span class="inline-astro-icon" data-static-symbol="star" aria-hidden="true"></span>
+            <div>
+              <h3 data-i18n="nextResultTitle">Следующий разбор усиливает карту</h3>
+              <p data-i18n="nextResultText">Добавьте еще один модуль, чтобы открыть персональную связку рекомендаций по телу, деньгам и отношениям.</p>
+            </div>
+          </article>
+        </section>
+
         <section class="screen" data-screen="product" aria-labelledby="productTitle">
           <article class="product-hero">
             <figure class="product-art-large">
@@ -238,8 +262,8 @@
 
         <section class="screen" data-screen="result" aria-labelledby="resultTitle">
           <div class="section-head center">
-            <h2 id="resultTitle" data-i18n="resultTitle">Ваш результат</h2>
-            <p data-result-meta>Расклад • 29 июня 2026 • 19:40</p>
+            <h2 id="resultTitle" data-i18n="resultTitle">Мои результаты</h2>
+            <p data-result-meta data-i18n="resultMeta">3 сохраненных разбора - следующий откроет новый уровень</p>
           </div>
 
           <div class="result-visual" aria-hidden="true">
@@ -253,6 +277,19 @@
             <div>
               <h3 data-i18n="mainEnergy">Главная энергия результата</h3>
               <p data-i18n="mainEnergyText">Вы на пороге обновления и новых возможностей. Результат подсказывает, где сейчас находится ваша сильная сторона.</p>
+            </div>
+          </article>
+
+          <article class="content-panel result-vault">
+            <h3 data-i18n="resultsVaultTitle">Сохраненные разборы</h3>
+            <div class="results-list" data-results-list></div>
+          </article>
+
+          <article class="content-panel mystic-nudge">
+            <span class="inline-astro-icon" data-static-symbol="crystal" aria-hidden="true"></span>
+            <div>
+              <h3 data-i18n="nextResultTitle">Следующий разбор усиливает карту</h3>
+              <p data-i18n="nextResultText">Добавьте еще один модуль, чтобы открыть персональную связку рекомендаций по телу, деньгам и отношениям.</p>
             </div>
           </article>
 
@@ -284,6 +321,7 @@
 
         <section class="screen" data-screen="profile" aria-labelledby="profileTitle">
           <h2 id="profileTitle" data-i18n="profileTitle">Мой кабинет</h2>
+          <p class="lead" data-i18n="cabinetLead">Личная карта прогресса, покупок и приглашений.</p>
           <article class="profile-card">
             <div class="avatar-orbit" aria-hidden="true"><span></span></div>
             <div>
@@ -292,6 +330,30 @@
               <p>12.05.1990 · 14:30 · Moscow</p>
             </div>
             <button class="secondary-button compact" type="button" data-i18n="editProfile">Редактировать</button>
+          </article>
+
+          <article class="growth-panel">
+            <div class="growth-panel-head">
+              <div>
+                <h3 data-i18n="growthTitle">Звездный прогресс</h3>
+                <p data-i18n="growthSubtitle">Чем больше модулей и приглашений, тем выше личный уровень.</p>
+              </div>
+              <strong>68%</strong>
+            </div>
+            <div class="growth-chart" aria-hidden="true">
+              <span style="--height: 34%"></span>
+              <span style="--height: 58%"></span>
+              <span style="--height: 46%"></span>
+              <span style="--height: 72%"></span>
+              <span style="--height: 64%"></span>
+              <span style="--height: 88%"></span>
+            </div>
+            <div class="growth-lines">
+              <p><span data-i18n="purchasePath">Покупки</span><strong>6 / 8</strong></p>
+              <p><span data-i18n="referralPath">Приглашения</span><strong>12 / 17</strong></p>
+              <p><span data-i18n="bonusPath">Бонусы</span><strong>34 980 ₽</strong></p>
+            </div>
+            <p class="reward-line" data-i18n="nextReward">До статуса Oracle осталось 2 покупки или 5 приглашений</p>
           </article>
 
           <div class="dashboard-grid">
@@ -306,6 +368,15 @@
               <p data-i18n="paidModules">купленных модулей</p>
             </article>
           </div>
+
+          <article class="content-panel referral-boost">
+            <span class="inline-astro-icon" data-static-symbol="globe" aria-hidden="true"></span>
+            <div>
+              <h3 data-i18n="referralBoostTitle">Реферальная орбита</h3>
+              <p data-i18n="referralBoostText">Делитесь ссылкой: приглашения двигают шкалу бонусов и открывают скидки на следующие разборы.</p>
+              <button class="secondary-button compact" type="button" data-route="partner" data-i18n="openPartner">Открыть партнерку</button>
+            </div>
+          </article>
 
           <article class="content-panel">
             <h3 data-i18n="purchaseHistory">История покупок</h3>
@@ -366,36 +437,34 @@
           </button>
           <button type="button" data-route="catalog">
             <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="4" y="4" width="6" height="6" rx="1.2"></rect>
-              <rect x="14" y="4" width="6" height="6" rx="1.2"></rect>
-              <rect x="4" y="14" width="6" height="6" rx="1.2"></rect>
-              <rect x="14" y="14" width="6" height="6" rx="1.2"></rect>
-            </svg>
-            <small data-i18n="navModules">Модули</small>
-          </button>
-          <button type="button" data-route="partner">
-            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="8"></circle>
-              <path d="M12 7v10"></path>
-              <path d="M7 12h10"></path>
+              <path d="M12 4.5v15"></path>
+              <path d="M4.5 12h15"></path>
+              <path d="M7.4 7.4 16.6 16.6"></path>
+              <path d="M16.6 7.4 7.4 16.6"></path>
             </svg>
-            <small data-i18n="navPartner">Партнеры</small>
+            <small data-i18n="navCatalog">Каталог</small>
+          </button>
+          <button type="button" data-route="favorites">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 20s-7-4.4-8.6-9.1C2.3 7.5 4.4 5 7.2 5c1.8 0 3.2 1 4.8 2.7C13.6 6 15 5 16.8 5c2.8 0 4.9 2.5 3.8 5.9C19 15.6 12 20 12 20Z"></path>
+            </svg>
+            <small data-i18n="navFavorites">Избранное</small>
           </button>
           <button type="button" data-route="result">
             <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="5" y="4" width="14" height="16" rx="2"></rect>
-              <path d="M8.5 9h7"></path>
-              <path d="M8.5 13h7"></path>
-              <path d="M8.5 17h4.5"></path>
+              <circle cx="12" cy="12" r="8"></circle>
+              <circle cx="12" cy="10" r="2.2"></circle>
+              <path d="M7.8 17c.8-2.2 2.2-3.3 4.2-3.3s3.4 1.1 4.2 3.3"></path>
             </svg>
-            <small data-i18n="navResults">Итоги</small>
+            <small data-i18n="navResults">Мои результаты</small>
           </button>
           <button type="button" data-route="profile">
             <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="8" r="3.2"></circle>
               <path d="M5.5 20c.8-3.6 3.1-5.4 6.5-5.4s5.7 1.8 6.5 5.4"></path>
             </svg>
-            <small data-i18n="navProfile">Профиль</small>
+            <small data-i18n="navProfile">Кабинет</small>
           </button>
         </nav>
       </main>

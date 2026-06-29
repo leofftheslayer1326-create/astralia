@@ -5,6 +5,7 @@ const state = {
   category: "all",
   query: "",
   selectedProductId: "products",
+  favoriteProductIds: ["stones", "partner-fit", "money"],
   appliedPromo: null,
 };
 
@@ -58,7 +59,8 @@ const i18n = {
     payButton: "Оплатить",
     getFree: "Получить бесплатно",
     paymentFineprint: "Безопасная оплата. В демо платеж не выполняется.",
-    resultTitle: "Ваш результат",
+    resultTitle: "Мои результаты",
+    resultMeta: "3 сохраненных разбора - следующий откроет новый уровень",
     mainEnergy: "Главная энергия результата",
     mainEnergyText: "Вы на пороге обновления и новых возможностей. Результат подсказывает, где сейчас находится ваша сильная сторона.",
     insightLove: "Любовь",
@@ -70,11 +72,28 @@ const i18n = {
     saveResult: "Сохранить",
     downloadPdf: "Скачать PDF",
     backToModules: "К выбору модулей",
-    profileTitle: "Мой кабинет",
+    resultsVaultTitle: "Сохраненные разборы",
+    nextResultTitle: "Следующий разбор усиливает карту",
+    nextResultText: "Добавьте еще один модуль, чтобы открыть персональную связку рекомендаций по телу, деньгам и отношениям.",
+    favoriteTitle: "Избранное",
+    favoritesLead: "Модули, к которым пользователь должен захотеть вернуться.",
+    favoriteHint: "Добавлено в личную орбиту",
+    favoriteEmpty: "Избранных модулей пока нет",
+    profileTitle: "Кабинет",
     profileName: "Имя Пользователя",
     editProfile: "Редактировать",
     activeAccess: "активных доступа",
     paidModules: "купленных модулей",
+    cabinetLead: "Личная карта прогресса, покупок и приглашений.",
+    growthTitle: "Звездный прогресс",
+    growthSubtitle: "Чем больше модулей и приглашений, тем выше личный уровень.",
+    purchasePath: "Покупки",
+    referralPath: "Приглашения",
+    bonusPath: "Бонусы",
+    nextReward: "До статуса Oracle осталось 2 покупки или 5 приглашений",
+    referralBoostTitle: "Реферальная орбита",
+    referralBoostText: "Делитесь ссылкой: приглашения двигают шкалу бонусов и открывают скидки на следующие разборы.",
+    openPartner: "Открыть партнерку",
     purchaseHistory: "История покупок",
     partnerTitle: "Партнерство",
     partnerLead: "Делитесь Astralia и получайте бонусы за приглашения.",
@@ -96,10 +115,10 @@ const i18n = {
     adminResults: "База результатов",
     adminLegal: "Юридические документы",
     navHome: "Главная",
-    navModules: "Модули",
-    navPartner: "Партнеры",
-    navResults: "Итоги",
-    navProfile: "Профиль",
+    navCatalog: "Каталог",
+    navFavorites: "Избранное",
+    navResults: "Мои результаты",
+    navProfile: "Кабинет",
     oneTime: "разовая оплата",
     funnel: "воронка",
     noProducts: "Ничего не найдено",
@@ -158,7 +177,8 @@ const i18n = {
     payButton: "Pay",
     getFree: "Get for free",
     paymentFineprint: "Secure payment. This demo does not charge money.",
-    resultTitle: "Your result",
+    resultTitle: "My results",
+    resultMeta: "3 saved readings - the next one opens a new level",
     mainEnergy: "Main energy",
     mainEnergyText: "You are at the edge of renewal and new possibilities. The result shows where your strength is now.",
     insightLove: "Love",
@@ -170,11 +190,28 @@ const i18n = {
     saveResult: "Save",
     downloadPdf: "Download PDF",
     backToModules: "Back to modules",
-    profileTitle: "My profile",
+    resultsVaultTitle: "Saved readings",
+    nextResultTitle: "The next reading strengthens your map",
+    nextResultText: "Add one more module to unlock a personal link between body, money and relationship recommendations.",
+    favoriteTitle: "Favorites",
+    favoritesLead: "Modules the user should want to return to.",
+    favoriteHint: "Added to personal orbit",
+    favoriteEmpty: "No favorite modules yet",
+    profileTitle: "Cabinet",
     profileName: "User Name",
     editProfile: "Edit profile",
     activeAccess: "active accesses",
     paidModules: "paid modules",
+    cabinetLead: "Your personal map of progress, purchases and invitations.",
+    growthTitle: "Star progress",
+    growthSubtitle: "More modules and invitations raise the personal level.",
+    purchasePath: "Purchases",
+    referralPath: "Invitations",
+    bonusPath: "Bonuses",
+    nextReward: "2 purchases or 5 invitations left to Oracle status",
+    referralBoostTitle: "Referral orbit",
+    referralBoostText: "Share your link: invitations move the bonus scale and unlock discounts for next readings.",
+    openPartner: "Open partnership",
     purchaseHistory: "Purchase history",
     partnerTitle: "Partnership",
     partnerLead: "Share Astralia and receive bonuses for invitations.",
@@ -196,10 +233,10 @@ const i18n = {
     adminResults: "Result database",
     adminLegal: "Legal documents",
     navHome: "Home",
-    navModules: "Modules",
-    navPartner: "Partners",
-    navResults: "Results",
-    navProfile: "Profile",
+    navCatalog: "Catalog",
+    navFavorites: "Favorites",
+    navResults: "My results",
+    navProfile: "Cabinet",
     oneTime: "one-time",
     funnel: "funnel",
     noProducts: "No products found",
@@ -483,9 +520,9 @@ const serviceProducts = [
 const allProducts = [...products, ...serviceProducts];
 
 const historyItems = [
-  { title: "Камни-талисманы", date: "29.06.2026", price: "0 ₽" },
-  { title: "Где моя энергия?", date: "28.06.2026", price: "10 000 ₽" },
-  { title: "Расклады таро", date: "25.06.2026", price: "2 990 ₽" },
+  { productId: "stones", date: "29.06.2026", price: "0 ₽", status: "PDF готов" },
+  { productId: "energy", date: "28.06.2026", price: "10 000 ₽", status: "сохранено" },
+  { productId: "tarot", date: "25.06.2026", price: "2 990 ₽", status: "архив" },
 ];
 
 function t(key) {
@@ -596,6 +633,43 @@ function renderProducts() {
   });
 }
 
+function renderFavorites() {
+  const host = document.querySelector("[data-favorites]");
+  if (!host) return;
+  const favoriteProducts = state.favoriteProductIds
+    .map((id) => products.find((product) => product.id === id))
+    .filter(Boolean);
+
+  host.innerHTML = "";
+  if (!favoriteProducts.length) {
+    const empty = document.createElement("p");
+    empty.textContent = t("favoriteEmpty");
+    host.append(empty);
+    return;
+  }
+
+  favoriteProducts.forEach((product) => {
+    const text = productText(product);
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "favorite-card";
+    card.dataset.route = "product";
+    card.dataset.productId = product.id;
+    card.innerHTML = `
+      <span class="favorite-card-art">
+        <img src="${productImage(product)}" alt="" loading="lazy">
+        <span>${symbolSvg(product.symbol)}</span>
+      </span>
+      <span class="favorite-card-copy">
+        <small>${t("favoriteHint")}</small>
+        <strong>${text.title}</strong>
+        <em>${formatPrice(product.price)}</em>
+      </span>
+    `;
+    host.append(card);
+  });
+}
+
 function renderProductDetail() {
   const product = selectedProduct();
   const text = productText(product);
@@ -660,12 +734,39 @@ function renderCheckoutTotal() {
 
 function renderHistory() {
   const host = document.querySelector("[data-history]");
+  if (!host) return;
   host.innerHTML = "";
   historyItems.forEach((item) => {
+    const product = products.find((entry) => entry.id === item.productId);
+    const title = product ? productText(product).title : item.productId;
     const row = document.createElement("div");
     row.className = "history-item";
-    row.innerHTML = `<div><strong>${item.title}</strong><br><span>${item.date}</span></div><strong>${item.price}</strong>`;
+    row.innerHTML = `<div><strong>${title}</strong><br><span>${item.date}</span></div><strong>${item.price}</strong>`;
     host.append(row);
+  });
+}
+
+function renderResultCards() {
+  const host = document.querySelector("[data-results-list]");
+  if (!host) return;
+  host.innerHTML = "";
+  historyItems.forEach((item) => {
+    const product = products.find((entry) => entry.id === item.productId);
+    if (!product) return;
+    const text = productText(product);
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "result-card";
+    card.dataset.route = "product";
+    card.dataset.productId = product.id;
+    card.innerHTML = `
+      <span class="inline-astro-icon small" aria-hidden="true">${symbolSvg(product.symbol)}</span>
+      <span>
+        <strong>${text.title}</strong>
+        <small>${item.date} - ${item.status}</small>
+      </span>
+    `;
+    host.append(card);
   });
 }
 
@@ -746,8 +847,10 @@ function renderAll() {
   renderTranslations();
   renderStaticSymbols();
   renderProducts();
+  renderFavorites();
   renderProductDetail();
   renderHistory();
+  renderResultCards();
 }
 
 renderAll();
