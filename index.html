@@ -6,6 +6,9 @@
     <title>Astralia by Angelina Pars</title>
     <meta name="description" content="Astralia demo mobile web app">
     <link rel="icon" href="assets/astralia-logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
   </head>
   <body>
@@ -30,7 +33,10 @@
               <circle class="sigil-dot" cx="32" cy="45" r="1.8"></circle>
             </svg>
           </button>
-          <button class="brand-title" type="button" data-route="home">ASTRALIA</button>
+          <button class="brand-title" type="button" data-route="home">
+            <span>ASTRALIA</span>
+            <small>by Angelina Pars</small>
+          </button>
           <div class="lang-switch" aria-label="Language switch">
             <input class="lang-toggle-checkbox" id="langToggle" type="checkbox" data-lang-toggle aria-label="Switch language">
             <label class="lang-toggle" for="langToggle">
