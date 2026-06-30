@@ -3174,6 +3174,41 @@ code {
     gap: 12px;
   }
 
+  .screen[data-screen="home"] .value-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .screen[data-screen="home"] .value-grid .mini-card {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    align-items: start;
+    min-height: 0;
+    padding: 16px;
+    gap: 6px 12px;
+  }
+
+  .screen[data-screen="home"] .value-grid .mini-card .inline-astro-icon {
+    grid-row: 1 / 3;
+    margin: 0;
+  }
+
+  .screen[data-screen="home"] .value-grid .mini-card strong {
+    font-size: clamp(24px, 7vw, 30px);
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  .screen[data-screen="home"] .value-grid .mini-card p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.42;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
   .screen[data-screen="profile"] .profile-card {
     order: 1;
   }
